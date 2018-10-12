@@ -18,8 +18,13 @@ There are two roles available: Admin/Employee (volunteer).
 
 ![wireframe2](https://github.com/timeCommit-easyAvailability/timeCommit/blob/master/assets/wireframe_6.jpg) <br>
 
-
 Admins maintain the system by approving users hours, adjusting the days/timeslots based on need, and approve an employee's choices. Once approved, the system emails the employee a notification that their choices have been approved. Users and namangers will be able to sign in and see the schedule at any time.
+
+#### Development:
+
+##### Git-flow
+![gitflow](https://github.com/timeCommit-easyAvailability/timeCommit/blob/master/assets/gitflow.jpg) <br>
+
 
 #### License: 
 - MIT License
