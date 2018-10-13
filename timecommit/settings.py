@@ -28,6 +28,8 @@ DEBUG = strtobool(os.environ.get('DEBUG', 'False'))
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split()
 
+SECRET_KEY = 'xqx629r^5x8lj91o!vm_w5u2=@#cau7r*5buvby^k4*2285no&'
+
 
 # Application definition
 
@@ -117,6 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+
 TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
@@ -130,6 +133,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Django registration

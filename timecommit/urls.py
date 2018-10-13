@@ -24,4 +24,5 @@ urlpatterns = [
         'employee_dashboard.urls')),
     path('admindash/', include(
         'admin_dashboard.urls'))
+
 ]
