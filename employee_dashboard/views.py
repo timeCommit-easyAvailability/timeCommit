@@ -1,13 +1,11 @@
 from django.shortcuts import render
-
-# Create your views here.
-from .models import Amodel
+from .models import User_Schedule
 
 
-def Amodel_view(request):
-    models = Amodel.objects.all()
+def User_Schedule_view(request):
+    u_sched = User_Schedule.objects.all()
 
     context = {
-        'models': models
+        'models': u_sched
     }
     return render(request, 'models/models_list.html', context=context)

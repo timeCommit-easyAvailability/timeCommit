@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .views import Amodel
+from .models import User_Schedule
 
 
 # Register your models here.
-admin.site.register(Amodel)
+admin.site.register((User_Schedule))
