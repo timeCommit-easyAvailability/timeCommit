@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import Amodel_view
+from .views import User_Schedule_view
 
 urlpatterns = [
-    path('', Amodel_view, name='employee_dash'),
+    path('', User_Schedule_view, name='schedules'),
 ]
+

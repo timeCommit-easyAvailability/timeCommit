@@ -1,13 +1,20 @@
 from django.shortcuts import render
-
-# Create your views here.
-from .models import Amodel
+from .models import Shift, Company
 
 
-def Amodel_view(request):
-    models = Amodel.objects.all()
+def Company_view(request):
+    company = Company.objects.all()
 
     context = {
-        'models': models
+        'models': company
+    }
+    return render(request, 'admin/admin_dashboard.html', context=context)
+
+
+def Shift_view(request):
+    shifts = shift.objects.all()
+
+    context = {
+        'models': shifts
     }
     return render(request, 'dash/admin_dashboard.html', context=context)

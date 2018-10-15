@@ -1,4 +1,8 @@
 from django.contrib import admin
-from .views import Amodel
+from .models import Shift, Company
 # Register your models here.
-admin.site.register(Amodel)
+admin.site.register((Shift, Company))
+
+
+
+

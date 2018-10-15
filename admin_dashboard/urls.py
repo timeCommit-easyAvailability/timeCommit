@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import Amodel_view
+from .views import Company_view, Shift_view
 
 urlpatterns = [
-    path('', Amodel_view, name='admin_dash'),
+    path('', Shift_view, name='shift'),
 ]
