@@ -12,7 +12,7 @@ def Company_view(request):
 
 
 def Shift_view(request):
-    shifts = shift.objects.all()
+    shifts = Shift.objects.all()
 
     context = {
         'models': shifts
