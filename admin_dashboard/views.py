@@ -10,4 +10,4 @@ def Amodel_view(request):
     context = {
         'models': models
     }
-    return render(request, 'admin/admin_dashboard.html', context=context)
+    return render(request, 'dash/admin_dashboard.html', context=context)
