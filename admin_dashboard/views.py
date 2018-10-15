@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Schedules, Company
+from .models import Shift, Company
 
 
 def Company_view(request):
@@ -11,10 +11,10 @@ def Company_view(request):
     return render(request, 'admin/admin_dashboard.html', context=context)
 
 
-def Schedule_view(request):
-    schedules = Schedules.objects.all()
+def Shift_view(request):
+    shifts = shift.objects.all()
 
     context = {
-        'models': schedules
+        'models': shifts
     }
     return render(request, 'admin/admin_dashboard.html', context=context)
