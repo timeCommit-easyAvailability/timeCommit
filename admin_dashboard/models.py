@@ -2,18 +2,18 @@ from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
 
-class Schedules(models.Model):
+class Shift(models.Model):
     # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='shedule_settings')
-    # DAY = [
-    #     ('monday', 'Monday'),
-    #     ('tuesday', 'Tuesday'),
-    #     ('wednesday', 'Wednesday'),
-    #     ('thursday', 'Thursday'),
-    #     ('friday', 'Friday'),
-    #     ('saturday', 'Saturday'),
-    #     ('sunday', 'Sunday'),
-    # ]
-    day = models.CharField(max_length=9)
+    DAY = [
+        ('monday', 'Monday'),
+        ('tuesday', 'Tuesday'),
+        ('wednesday', 'Wednesday'),
+        ('thursday', 'Thursday'),
+        ('friday', 'Friday'),
+        ('saturday', 'Saturday'),
+        ('sunday', 'Sunday'),
+    ]
+    day = models.CharField(choices=DAY, max_length=9, default='Monday')
     start_time = models.IntegerField()
     end_time = models.IntegerField()
     employees_required = models.IntegerField()
@@ -40,7 +40,11 @@ class Schedules(models.Model):
             )
 
     def __str__(self):
-        return '{} | {}'.format(self.day, self.start_time)
+        return 'Day: {} | Start time: {} | End Time: {}'.format(
+            self.day,
+            self.start_time,
+            self.end_time
+            )
 
 
 class Company(models.Model):
