@@ -1,6 +1,8 @@
-from django.contrib import admin
-from .models import User_Schedule
+# from django.contrib import admin
+# from .models import User_Schedule
+# from import_export.admin import ImportExportActionModelAdmin, ExportMixin
 
 
-# Register your models here.
-admin.site.register((User_Schedule))
+# @admin.register(User_Schedule)
+# class UserAdmin(ExportMixin, admin.ModelAdmin):
+#     pass

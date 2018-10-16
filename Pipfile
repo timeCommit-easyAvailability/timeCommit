@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 "psycopg2-binary" = "*"
 django-registration = "*"
+django-import-export = "*"
+django-rest-framework = "*"
+django-queryset-csv = "*"
 
 [dev-packages]
 
