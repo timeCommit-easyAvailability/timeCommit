@@ -42,14 +42,3 @@ def employee_dashboard_view(request):
 
     return render(request, 'employee/employee_dashboard.html', context=context)
 
-
-# def notes_detail_view(request, pk=None):
-#     if not request.user.is_authenticated:
-#         return redirect(reverse('login'))
-
-#     note = get_object_or_404(Note, id=pk, user__id=request.user.id)
-#     context = {
-#         'note': note,
-#     }
-
-#     return render(request, 'notes/notes_detail.html', context)
