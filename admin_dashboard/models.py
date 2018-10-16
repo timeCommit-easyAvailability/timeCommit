@@ -1,9 +1,9 @@
 from django.contrib.postgres.fields import ArrayField
+# from django.contrib.auth.models import User
 from django.db import models
 
 
 class Shift(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='shedule_settings')
     DAY = [
         ('monday', 'Monday'),
         ('tuesday', 'Tuesday'),
@@ -13,6 +13,7 @@ class Shift(models.Model):
         ('saturday', 'Saturday'),
         ('sunday', 'Sunday'),
     ]
+
     day = models.CharField(choices=DAY, max_length=9, default='Monday')
     start_time = models.IntegerField()
     end_time = models.IntegerField()
@@ -20,15 +21,6 @@ class Shift(models.Model):
     employees_assigned = ArrayField(models.IntegerField())
     date_added = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateField(auto_now=True)
-
-    # def add_employee(self, employee_id):
-    #     return self.employees_assigned.append(employee_id)
-
-    # def remove_employee(self, employee_id):
-    #     try:
-    #         return self.employees_assigned.remove(employee_id)
-    #     except ValueError as ve:
-    #         return (ve)
 
     def __repr__(self):
         return '<Shift Day: {} | Start: {} | End: {} | Volunteers Required: {} | Volunteers: {}>'.format(
@@ -62,4 +54,28 @@ class Company(models.Model):
             )
 
     def __str__(self):
-        return '{} | {} | {}'.format(self.company_name, self.address, self.contact_email)
+        return '{} | {} | {}'.format(
+            self.company_name,
+            self.address,
+            self.contact_email
+        )
+
+
+class Scheduler(models.Model):
+    subject = models.CharField(max_length=254)
+    start_date = models.DateField()
+    description = models.CharField(max_length=254)
+
+    def __repr__(self):
+        return 'Subject {} | Start Date: {} | Description: {}'.format(
+            self.subject,
+            self.start_date,
+            self.description
+            )
+
+    def __str__(self):
+        return '{} {} {}'.format(
+            self.subject,
+            self.description,
+            self.start_date
+            )
