@@ -17,16 +17,11 @@ class CompAdmin(ExportMixin, admin.ModelAdmin):
 
 @admin.register(User_Schedule)
 class ScheduleAdmin(ExportMixin, admin.ModelAdmin):
-    def csv_view(request):
-        shifts = User_Schedule.objects.values(
-            'selected_shift__start_time',
-            'selected_shift__end_time',
-            'selected_shift__day',
-            'selected_shift__day',
-            'user__first_name',
-            'user__last_name',
-            )
-        return write_csv(shifts)
+    pass
+
+
+# class CSV_export(widgets)
+#     pass
 
 
 @admin.register(Scheduler)
@@ -35,12 +30,6 @@ class UserAdmin(ImportExportActionModelAdmin):
         model = Scheduler
         # include = ('subject', 'start_date', 'description')
         exclude = ('id')
-
-
-# favorite_food__name
-
-
-
 
 """
 user = fields.Field(column_name='user', attribute='user', widget=widgets.ForeignKeyWidget(settings.AUTH_USER_MODEL, 'id'))
