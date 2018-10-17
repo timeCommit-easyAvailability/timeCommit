@@ -1,26 +1,30 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import Shift, Company
-from djqscsv import render_to_csv_response, write_csv
-from employee_dashboard.models import User_Schedule
-import datetime
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.urls import reverse_lazy
 import time
+import datetime
 from datetime import date
+from djqscsv import render_to_csv_response, write_csv
+from .models import Shift, Company
+from .forms import ShiftForm, CompanyForm, UserScheduleForm
+from employee_dashboard.models import User_Schedule
 
 
 def Company_view(request):
-    # if not request.user.is_authenticated:
-    #     return redirect(reverse('login'))
+    if not request.user.is_authenticated:
+        return redirect(reverse('login'))
     company = Company.objects.all()
 
     context = {
         'models': company
     }
-    return render(request, 'admin/admin_dashboard.html', context=context)
+    return render(request, 'dash/admin_dashboard.html', context=context)
 
 
 def Shift_view(request):
-    # if not request.user.is_authenticated:
-    #     return redirect(reverse('login'))
+    if not request.user.is_authenticated:
+        return redirect(reverse('login'))
     shifts = Shift.objects.all()
 
     context = {
@@ -29,9 +33,47 @@ def Shift_view(request):
     return render(request, 'dash/admin_dashboard.html', context=context)
 
 
+class CreateCompanyView(LoginRequiredMixin, CreateView):
+    template_name = 'dash/create_company.html'
+    model = Company
+    form_class = CompanyForm
+    success_url = reverse_lazy('dash/admin_dashboard.html')
+    login_url = reverse_lazy('login')
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+
+
+class CreateShiftView(LoginRequiredMixin, CreateView):
+    template_name = 'dash/create_shift.html'
+    model = Shift
+    form_class = ShiftForm
+    success_url = reverse_lazy('dash/admin_dashboard.html')
+    login_url = reverse_lazy('login')
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+
+
+# add a pk to update
+class ApproveUserScheduleView(LoginRequiredMixin, UpdateView):
+    template_name = 'dash/approve_shifts.html'
+    model = User_Schedule
+    form_class = UserScheduleForm
+    success_url = reverse_lazy('dash/admin_dashboard.html')
+    login_url = reverse_lazy('login')
+
+    def get_object(self):
+        # import pdb; pdb.set_trace()
+        return User_Schedule.objects.get(pk=self.kwargs['id'])
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+
+
 def Csv_view(request):
-    # if not request.user.is_authenticated:
-    #     return redirect(reverse('login'))
+    if not request.user.is_authenticated:
+        return redirect(reverse('login'))
 
     def get_date(shifts):
         for i in shifts:

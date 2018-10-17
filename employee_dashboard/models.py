@@ -5,7 +5,7 @@ from admin_dashboard.models import Shift
 
 class User_Schedule(models.Model):
     PRIORITY = [
-        (1, 'highest'),
+        (1, 'Highest'),
         (2, 'Medium'),
         (3, 'Lowest'),
     ]
@@ -13,7 +13,7 @@ class User_Schedule(models.Model):
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name='shedule_settings'
+        related_name='schedule_settings'
         )
 
     selected_shift = models.ForeignKey(Shift, on_delete=models.CASCADE)
