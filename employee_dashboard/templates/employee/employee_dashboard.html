@@ -4,6 +4,7 @@
 {% load static %}
 
     <section class="weekdays">
+
       <div class="day">sun</div>
       <div class="day">mon</div>
       <div class="day">tue</div>
@@ -14,77 +15,83 @@
 
     </section>
 
-    <section class="shift_table">
-      <div class="shift_day" id="sun">
+    <form id="cal_select">
 
-          {% for shift in calendar.sunday %}
-          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-            <form><input></input></form>
-          </div>
-          {% endfor %}
+      <section class="shift_table">
+        <div class="shift_day" id="sun">
 
-      </div>
+            {% for shift in calendar.sunday %}
+            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+              <input></input>
+            </div>
+            {% endfor %}
 
-      <div class="shift_day" id="mon">
+        </div>
 
-          {% for shift in calendar.monday %}
-          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-            <form><input></input></form>
-          </div>
-          {% endfor %}
+        <div class="shift_day" id="mon">
 
-      </div>
+            {% for shift in calendar.monday %}
+            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+              <input></input>
+            </div>
+            {% endfor %}
 
-      <div class="shift_day" id="tue">
+        </div>
 
-          {% for shift in calendar.tuesday %}
-          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-            <form><input></input></form>
-          </div>
-          {% endfor %}
+        <div class="shift_day" id="tue">
 
-      </div>
+            {% for shift in calendar.tuesday %}
+            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+              <input></input>
+            </div>
+            {% endfor %}
 
-      <div class="shift_day" id="wed">
+        </div>
 
-          {% for shift in calendar.wednesday %}
-          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-            <form><input></input></form>
-          </div>
-          {% endfor %}
+        <div class="shift_day" id="wed">
 
-      </div>
+            {% for shift in calendar.wednesday %}
+            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+              <input></input>
+            </div>
+            {% endfor %}
 
-      <div class="shift_day" id="thu">
+        </div>
 
-          {% for shift in calendar.thursday %}
-          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-            <form><input></input></form>
-          </div>
-          {% endfor %}
+        <div class="shift_day" id="thu">
 
-      </div>
+            {% for shift in calendar.thursday %}
+            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+              <input></input>
+            </div>
+            {% endfor %}
 
-      <div class="shift_day" id="fri">
+        </div>
 
-        {% for shift in calendar.friday %}
-          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-            <form><input></input></form>
-          </div>
-          {% endfor %}
+        <div class="shift_day" id="fri">
 
-      </div>
+          {% for shift in calendar.friday %}
+            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+              <input></input>
+            </div>
+            {% endfor %}
 
-      <div class="shift_day" id="sat">
+        </div>
 
-        {% for shift in calendar.saturday %}
-          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-            <form><input></input></form>
-          </div>
-          {% endfor %}
+        <div class="shift_day" id="sat">
 
-      </div>
+          {% for shift in calendar.saturday %}
+            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+              <input></input>
+            </div>
+            {% endfor %}
 
-    </section>
+        </div>
+
+      </section>
+
+    </form>
+
+    <button type="submit" form="cal_select" value="Submit">Submit</button>
 
 {% endblock content %}
