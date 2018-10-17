@@ -25,7 +25,7 @@ class User_Schedule(models.Model):
     def __repr__(self):
         return '<Shift: {} | Priority: {} | Status: {}>'.format(
             self.selected_shift,
-            self.priotity,
+            self.priority,
             self.status,
             )
 
