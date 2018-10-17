@@ -18,7 +18,7 @@ class Shift(models.Model):
     start_time = models.IntegerField()
     end_time = models.IntegerField()
     employees_required = models.IntegerField()
-    employees_assigned = ArrayField(models.IntegerField())
+    employees_assigned = ArrayField(models.IntegerField(), null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateField(auto_now=True)
 
