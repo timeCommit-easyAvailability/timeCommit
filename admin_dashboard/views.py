@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Shift, Company
 from djqscsv import render_to_csv_response, write_csv
 from employee_dashboard.models import User_Schedule
@@ -8,6 +8,8 @@ from datetime import date
 
 
 def Company_view(request):
+    # if not request.user.is_authenticated:
+    #     return redirect(reverse('login'))
     company = Company.objects.all()
 
     context = {
@@ -17,6 +19,8 @@ def Company_view(request):
 
 
 def Shift_view(request):
+    # if not request.user.is_authenticated:
+    #     return redirect(reverse('login'))
     shifts = Shift.objects.all()
 
     context = {
@@ -24,8 +28,11 @@ def Shift_view(request):
     }
     return render(request, 'dash/admin_dashboard.html', context=context)
 
-# shifts.first()['selected_shift__day']
+
 def Csv_view(request):
+    # if not request.user.is_authenticated:
+    #     return redirect(reverse('login'))
+
     def get_date(shifts):
         for i in shifts:
             for keys, vals in i.items():
@@ -54,13 +61,13 @@ def Csv_view(request):
 
     def next_weekday(d, weekday):
         days_ahead = weekday - d.weekday()
-        if days_ahead <= 0: # Target day already happened this week
+        if days_ahead <= 0:
             days_ahead += 7
-        f_day = d + datetime.timedelta(days_ahead)
-        f_day = f_day.strftime("%m/%d/%Y")
-        return f_day
+        future_day = d + datetime.timedelta(days_ahead)
+        future_day = future_day.strftime("%m/%d/%Y")
+        return future_day
 
-
+    # shift = get_object_or_404(User_Schedule, id=pk)
     shifts = User_Schedule.objects.values(
         'selected_shift__user_schedule__user__first_name',
         'selected_shift__day',
@@ -77,5 +84,3 @@ def Csv_view(request):
         'selected_shift__start_time': 'Start Time',
         'selected_shift__end_time': 'End Time'
     })
-
-
