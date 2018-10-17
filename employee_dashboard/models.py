@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from admin_dashboard.models import Schedules
+from admin_dashboard.models import Shift
 
 
 class User_Schedule(models.Model):
@@ -16,18 +16,21 @@ class User_Schedule(models.Model):
         related_name='shedule_settings'
         )
 
-    shift_id = models.ForeignKey(Schedules, on_delete=models.CASCADE)
-    priotity = models.IntegerField(choices=PRIORITY, default=3)
+    selected_shift = models.ForeignKey(Shift, on_delete=models.CASCADE)
+    priority = models.IntegerField(choices=PRIORITY, default=3)
     status = models.BooleanField(default=False)
     date_added = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateField(auto_now=True)
 
     def __repr__(self):
-        return '<Shift: {} | Priotity: {} | Status: {}>'.format(
-            self.shift_id,
+        return '<Shift: {} | Priority: {} | Status: {}>'.format(
+            self.selected_shift,
             self.priotity,
             self.status,
             )
 
     def __str__(self):
-        return '{} | {} | {}'.format(self.shift_id, self.priotity, self.status)
+        return '{} | {} | {}'.format(self.selected_shift, self.priority, self.status)
+
+
+

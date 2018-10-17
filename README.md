@@ -13,10 +13,12 @@ The employee has the option to place a priority (1-3) for the shifts they want a
 ![wireframe](https://github.com/timeCommit-easyAvailability/timeCommit/blob/master/assets/20181002_163528.jpg) <br>
 
 TimeCommit is a sytem that allows user to commit their avalibility to a weekly schedule.
-There are two roles available: Admin/Employee (volunteer). 
-
+There are two roles available: Admin/Employee (volunteer).
 
 ![wireframe2](https://github.com/timeCommit-easyAvailability/timeCommit/blob/master/assets/wireframe_6.jpg) <br>
+
+Database Tables:
+![wireframe2](https://github.com/timeCommit-easyAvailability/timeCommit/blob/master/assets/dbtables.jpg) <br>
 
 Admins maintain the system by approving users hours, adjusting the days/timeslots based on need, and approve an employee's choices. Once approved, the system emails the employee a notification that their choices have been approved. Users and namangers will be able to sign in and see the schedule at any time.
 
@@ -26,7 +28,7 @@ Admins maintain the system by approving users hours, adjusting the days/timeslot
 ![gitflow](https://github.com/timeCommit-easyAvailability/timeCommit/blob/master/assets/gitflow.jpg) <br>
 
 
-#### License: 
+#### License:
 - MIT License
 
 

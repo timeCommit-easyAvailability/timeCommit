@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_registration',
+    'import_export',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -135,6 +137,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Django Import Export
+IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 # Django registration
 ACCOUNT_ACTIVATION_DAYS = 1

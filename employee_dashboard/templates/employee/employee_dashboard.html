@@ -1,0 +1,90 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+{% load static %}
+
+    <section class="weekdays">
+      <div class="day">sun</div>
+      <div class="day">mon</div>
+      <div class="day">tue</div>
+      <div class="day">wed</div>
+      <div class="day">thu</div>
+      <div class="day">fri</div>
+      <div class="day">sat</div>
+
+    </section>
+
+    <section class="shift_table">
+      <div class="shift_day" id="sun">
+
+          {% for shift in calendar.sunday %}
+          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <form><input></input></form>
+          </div>
+          {% endfor %}
+
+      </div>
+
+      <div class="shift_day" id="mon">
+
+          {% for shift in calendar.monday %}
+          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <form><input></input></form>
+          </div>
+          {% endfor %}
+
+      </div>
+
+      <div class="shift_day" id="tue">
+
+          {% for shift in calendar.tuesday %}
+          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <form><input></input></form>
+          </div>
+          {% endfor %}
+
+      </div>
+
+      <div class="shift_day" id="wed">
+
+          {% for shift in calendar.wednesday %}
+          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <form><input></input></form>
+          </div>
+          {% endfor %}
+
+      </div>
+
+      <div class="shift_day" id="thu">
+
+          {% for shift in calendar.thursday %}
+          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <form><input></input></form>
+          </div>
+          {% endfor %}
+
+      </div>
+
+      <div class="shift_day" id="fri">
+
+        {% for shift in calendar.friday %}
+          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <form><input></input></form>
+          </div>
+          {% endfor %}
+
+      </div>
+
+      <div class="shift_day" id="sat">
+
+        {% for shift in calendar.saturday %}
+          <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <form><input></input></form>
+          </div>
+          {% endfor %}
+
+      </div>
+
+    </section>
+
+{% endblock content %}

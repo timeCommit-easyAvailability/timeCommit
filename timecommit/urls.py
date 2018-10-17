@@ -20,9 +20,7 @@ from django.urls import path, include
 urlpatterns = [
     path('', home_view, name='home'),
     path('admin/', admin.site.urls),
-    path('employeedash/', include(
-        'employee_dashboard.urls')),
-    path('admindash/', include(
-        'admin_dashboard.urls'))
-
+    path('employeedash/', include('employee_dashboard.urls')),
+    path('', include('admin_dashboard.urls')),
+    # path('csv', include('admin_dashboard.urls')),
 ]
