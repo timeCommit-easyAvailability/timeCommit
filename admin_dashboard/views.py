@@ -55,20 +55,47 @@ class CreateShiftView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-# add a pk to update
-class ApproveUserScheduleView(LoginRequiredMixin, UpdateView):
+class ApproveUserScheduleView(LoginRequiredMixin, ListView):
     template_name = 'dash/approve_shifts.html'
     model = User_Schedule
     form_class = UserScheduleForm
     success_url = reverse_lazy('dash/admin_dashboard.html')
     login_url = reverse_lazy('login')
 
-    def get_object(self):
-        # import pdb; pdb.set_trace()
-        return User_Schedule.objects.get(pk=self.kwargs['id'])
+    shifts = list(User_Schedule.objects.values(
+        'selected_shift__user_schedule__user__first_name',
+        'selected_shift__user_schedule__user__last_name',
+        'selected_shift__day',
+        'selected_shift__start_time',
+        'selected_shift__end_time',
+        'priority',
+        'status',
+        ))
+    # import pdb; pdb.set_trace()
+
+# def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['transactions'] = Transaction.objects.filter(budget__user__username=self.request.user.username)
+#         return context
 
     def form_valid(self, form):
         return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        # context = super().get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        counter = 0
+        context['prefs'] = []
+        for i in self.shifts:
+            context['prefs'].append(dict(i))
+            counter += 1
+
+        # for i in self.shifts:
+        #     context[i] += i
+        # context['first_name'] = User_Schedule.objects.values('selected_shift__user_schedule__user__first_name')
+        # import pdb; pdb.set_trace()
+        return context
+
 
 
 def Csv_view(request):
