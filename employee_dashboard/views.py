@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect, reverse
 from django.core.exceptions import PermissionDenied
 from admin_dashboard.models import Shift
+from .models import User_Schedule
 from operator import itemgetter
 
 
@@ -36,7 +37,7 @@ def employee_dashboard_view(request):
     for day in days_of_the_week:
         days_of_the_week[day].sort(key=itemgetter('start_time'))
 
-    # [[monday-3, 1],monday-4=,monday-2=,monday-1=,tuesday-6=2,wednesday-5=3]
+    # handle user prefs submitted
     if 'list' in request.POST:
         decoded_prefs = request.body.decode().split('&')
         split_prefs = []
@@ -56,7 +57,17 @@ def employee_dashboard_view(request):
                 true_prefs.append(i)
 
         true_prefs = dict(true_prefs)
-    import pdb; pdb.set_trace()
+
+        # create the User_Schedule from prefs
+        for key, values in true_prefs.items():
+            selected_shift = get_object_or_404(Shift, pk=key)
+            user_schedule_instance = User_Schedule.objects.create(
+                user=request.user,
+                selected_shift=selected_shift,
+                priority=values)
+
+            user_schedule_instance.save()
+
     context = {
         'calendar': days_of_the_week,
         # 'all_projects': all_shifts
