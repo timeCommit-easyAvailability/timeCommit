@@ -1,6 +1,14 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.shortcuts import render, get_list_or_404, get_object_or_404, redirect, reverse
+from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import (LoginRequiredMixin)
+from django.views.generic.edit import FormMixin, ModelFormMixin
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    FormView,
+    )
 from django.urls import reverse_lazy
 import time
 import datetime
@@ -63,30 +71,69 @@ class CreateShiftView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class ApproveUserScheduleView(LoginRequiredMixin, ListView):
-    template_name = 'dash/approve_shifts.html'
-    model = User_Schedule
-    form_class = UserScheduleForm
-    success_url = reverse_lazy('dash/admin_dashboard.html')
-    login_url = reverse_lazy('login')
+def approve_user_schedule_view(request):
+    if not request.user.is_authenticated:
+        raise PermissionDenied
 
-    def form_valid(self, form):
-        return super().form_valid(form)
+    all_schedules = list(get_list_or_404(User_Schedule))
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['shifts'] = User_Schedule.objects.values(
-            'selected_shift__user_schedule__user__first_name',
-            'selected_shift__user_schedule__user__last_name',
-            'selected_shift__day',
-            'selected_shift__start_time',
-            'selected_shift__end_time',
-            'priority',
-            'status',
-        ).distinct('id')
+    schedules = []
+    for schedule in all_schedules:
 
-        return context
+        new_schedule = {
+            'first_name': schedule.user.first_name,
+            'last_name': schedule.user.last_name,
+            'shift_id': schedule.selected_shift.id,
+            'start_time': schedule.selected_shift.start_time,
+            'end_time': schedule.selected_shift.end_time,
+            'id': schedule.id,
+            'day': schedule.selected_shift.day,
+            'priority': schedule.priority,
+            'status': schedule.status,
+            'needed': schedule.selected_shift.employees_required,
+            'assigned': schedule.selected_shift.employees_assigned,
+        }
+        schedules.append(new_schedule)
 
+    if 'list' in request.POST:
+        decoded_schedules = request.body.decode().split('&')
+        split_schedules = []
+        admin_assigned_schedules = []
+        # refactor inefficient declations eventually
+        true_schedules = []
+
+        for i in decoded_schedules:
+            split_schedules.append(i.split('='))
+        for i in split_schedules:
+            admin_assigned_schedules.append(i)
+
+        admin_assigned_schedules.pop(0)
+        admin_assigned_schedules.pop(-1)
+
+        for i in admin_assigned_schedules:
+            true_schedules.append(i)
+
+        true_schedules = dict(true_schedules)
+
+        for key, values in true_schedules.items():
+
+            User_Schedule.objects.filter(pk=key).update(status='True')
+            user_id = User_Schedule.objects.values().filter(pk=key)[0]['user_id']
+            shift_id = User_Schedule.objects.values().filter(pk=key)[0]['selected_shift_id']
+            ass_emp = Shift.objects.values().filter(pk=shift_id)[0]['employees_assigned']
+            if user_id not in ass_emp:
+                ass_emp.append(user_id)
+            else:
+                raise ValueError("You can't have the same shift twice")
+
+            Shift.objects.filter(pk=shift_id).update(employees_assigned=ass_emp)
+
+        return HttpResponseRedirect('shifts')
+    context = {
+        'schedules': schedules,
+    }
+
+    return render(request, 'dash/approve_shifts.html', context=context)
 
 
 def Csv_view(request):
