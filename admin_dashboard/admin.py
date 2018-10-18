@@ -20,10 +20,6 @@ class ScheduleAdmin(ExportMixin, admin.ModelAdmin):
     pass
 
 
-# class CSV_export(widgets)
-#     pass
-
-
 @admin.register(Scheduler)
 class UserAdmin(ImportExportActionModelAdmin):
     class Meta:

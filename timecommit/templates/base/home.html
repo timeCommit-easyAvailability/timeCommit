@@ -2,4 +2,19 @@
 
 {% block content %}
 <h1>save time!</h1>
+
+
+{% if user.is_authenticated %}
+<nav>
+    <ul>
+      <li><a href="{% url "home" %}">Home</a></li>
+      <li><a href="{% url "schedules" %}">schedules</a></li>
+      <li><a href="{% url "shift" %}">shift</a></li>
+    </ul>
+  </nav>
+
+{% else %}
+  <span>welcome page</span>
+{% endif %}
+
 {% endblock  %}
