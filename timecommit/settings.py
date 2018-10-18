@@ -28,8 +28,6 @@ DEBUG = strtobool(os.environ.get('DEBUG', 'False'))
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split()
 
-SECRET_KEY = 'xqx629r^5x8lj91o!vm_w5u2=@#cau7r*5buvby^k4*2285no&'
-
 
 # Application definition
 
@@ -143,7 +141,6 @@ IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 # Django registration
 ACCOUNT_ACTIVATION_DAYS = 1
-LOGIN_REDIRECT_URL = '/'
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -155,3 +152,7 @@ if DEBUG:
     EMAIL_PORT = 587
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+LOGOUT_REDIRECT_URL = 'home'
+
+LOGIN_REDIRECT_URL = 'home'
