@@ -16,11 +16,13 @@ def about_view(request):
 
 
 def admin_dash(request):
+    if not request.user.is_staff:
+        return redirect(reverse('home'))
     return render(request, 'dash/admin_dashboard.html')
 
 
 def Company_view(request):
-    if not request.user.is_authenticated:
+    if not request.user.is_staff:
         return redirect(reverse('login'))
     company = Company.objects.all()
 
@@ -31,7 +33,7 @@ def Company_view(request):
 
 
 def Shift_view(request):
-    if not request.user.is_authenticated:
+    if not request.user.is_staff:
         return redirect(reverse('login'))
     shifts = Shift.objects.all()
 
@@ -90,7 +92,7 @@ class ApproveUserScheduleView(LoginRequiredMixin, ListView):
 
 
 def Csv_view(request):
-    if not request.user.is_authenticated:
+    if not request.user.is_staff:
         return redirect(reverse('login'))
 
     def get_date(shifts):

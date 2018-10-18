@@ -8,7 +8,7 @@ from .views import (
     CreateCompanyView,
     CreateShiftView,
     ApproveUserScheduleView,
-    Admin_dash,
+    admin_dash,
 )
 
 

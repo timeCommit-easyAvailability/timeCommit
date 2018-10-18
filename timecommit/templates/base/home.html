@@ -10,7 +10,11 @@
     <ul>
       <li><a href="{% url "home" %}">Home</a></li>
       <li><a href="{% url "about" %}">About</a></li>
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}">logout</a>
+      {% else %}
       <li><a href="{% url "login" %}">Login / Register</a></li>
+      {% endif %}
     </ul>
   </nav>
 
@@ -19,7 +23,6 @@
 <nav>
     <ul>
       <li><a href="{% url "home" %}">Home</a></li>
-      <li><a href="{% url "schedules" %}">schedules</a></li>
       <a href="{% url 'logout' %}">logout</a>
     </ul>
   </nav>

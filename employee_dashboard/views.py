@@ -6,7 +6,7 @@ from operator import itemgetter
 
 def employee_dashboard_view(request):
     if not request.user.is_authenticated:
-        raise PermissionDenied
+        return redirect(reverse('login'))
 
     # calender generation logic
     all_shifts = get_list_or_404(Shift)

@@ -2,6 +2,13 @@
 
 {% block content %}
 <div class="admin_dash">
-  <h1>we are here now</h1>
+  <h1>Staff / Admin Panel</h1>
+    <ul>
+      <li><a href="{% url "schedules" %}">Schedule</a></li>
+      <li><a href="{% url "shifts" %}">Approve Shifts</a></li>
+      <li><a href="{% url "shift" %}">Create Shift</a></li>
+      <li><a href="{% url "create_company" %}">Company</a></li>
+      <li><a href="{% url "csv" %}">Export as .CSV</a></li>
+    </ul>
 </div>
 {% endblock content %}
