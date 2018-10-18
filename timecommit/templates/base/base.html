@@ -25,8 +25,14 @@
           <a href="{% url "schedules" %}">schedules</a>
           <a href="{% url "shift" %}">shift</a>
           <a href="{% url 'logout' %}">logout</a>
+          <a href="{% url "about" %}">about</a>
+          {% if user.is_staff %}
+          <a href="{% url 'admin_dash' %}">admin_dash</a>
+          {% endif %}
+
           <span>{{ user.username }}</span>
-        {% else %}
+          {% else %}
+          <a href="{% url "about" %}">about</a>
           <a href="{% url 'login' %}">login</a>
         {% endif %}
 
