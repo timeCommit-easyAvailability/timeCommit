@@ -1,0 +1,10 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<h2> Create Shifts </h2>
+<form method="post">
+  {{ form.as_p }}
+  {% csrf_token %}
+  <input type="submit" value="save">
+</form>
+{% endblock content %}
