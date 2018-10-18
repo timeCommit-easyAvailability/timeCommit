@@ -31,6 +31,3 @@ class User_Schedule(models.Model):
 
     def __str__(self):
         return '{} | {} | {}'.format(self.selected_shift, self.priority, self.status)
-
-
-

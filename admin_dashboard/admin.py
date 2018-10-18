@@ -5,6 +5,7 @@ from djqscsv import render_to_csv_response, write_csv
 from .models import Shift, Company, Scheduler
 from employee_dashboard.models import User_Schedule
 
+
 @admin.register(Shift)
 class ShiftAdmin(ExportMixin, admin.ModelAdmin):
     pass
