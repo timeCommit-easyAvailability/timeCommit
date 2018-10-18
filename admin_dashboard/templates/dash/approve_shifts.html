@@ -2,7 +2,21 @@
 
 {% block content %}
 <h2> Approve/Assign Shifts </h2>
+
 <form method="post">
+  {% for shift in prefs %}
+    <ul>
+        <li>
+        {{ shift.selected_shift__user_schedule__user__first_name }}
+        {{ shift.selected_shift__user_schedule__user__last_name }} |
+        {{ shift.selected_shift__day }}:
+        {{ shift.selected_shift__start_time }} -
+        {{ shift.selected_shift__end_time }} |
+        {{ shift.priority }} |
+        <input type="checkbox" name="status" value="{{ shift.status }}">
+      </li>
+    </ul>
+  {% endfor %}
   {{ form.as_p }}
   {% csrf_token %}
   <input type="submit" value="save">
