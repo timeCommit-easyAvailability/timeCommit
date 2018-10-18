@@ -1,4 +1,4 @@
-rom django.contrib import admin
+from django.contrib import admin
 from import_export.admin import ExportMixin, ImportExportActionModelAdmin
 from import_export import widgets, fields, resources
 from djqscsv import render_to_csv_response, write_csv

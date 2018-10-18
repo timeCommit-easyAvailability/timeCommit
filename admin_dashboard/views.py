@@ -11,6 +11,13 @@ from .forms import ShiftForm, CompanyForm, UserScheduleForm
 from employee_dashboard.models import User_Schedule
 
 
+def Admin_dash(request):
+    if not request.user.is_authenticated:
+        return redirect(reverse('login'))
+    
+    return render(request, 'dash/admin_dashboard.html', name='admin_dash')
+
+
 def Company_view(request):
     if not request.user.is_authenticated:
         return redirect(reverse('login'))

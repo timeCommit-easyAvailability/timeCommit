@@ -4,17 +4,27 @@
 <h1>save time!</h1>
 
 
+
+
+<nav>
+    <ul>
+      <li><a href="{% url "home" %}">Home</a></li>
+      <li><a href="{% url "about" %}">About</a></li>
+      <li><a href="{% url "login" %}">Login / Register</a></li>
+    </ul>
+  </nav>
+
+
 {% if user.is_authenticated %}
 <nav>
     <ul>
       <li><a href="{% url "home" %}">Home</a></li>
       <li><a href="{% url "schedules" %}">schedules</a></li>
-      <li><a href="{% url "shift" %}">shift</a></li>
+      <a href="{% url 'logout' %}">logout</a>
     </ul>
   </nav>
 
-{% else %}
-  <span>welcome page</span>
+
 {% endif %}
 
 {% endblock  %}
