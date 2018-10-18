@@ -1,6 +1,7 @@
 from django.urls import path
 # from django.contrib import admin
 from .views import (
+    admin_dash,
     Company_view,
     Shift_view,
     Csv_view,
@@ -12,7 +13,7 @@ from .views import (
 
 
 urlpatterns = [
-    path('admin_dash', Admin_dash, name='admin_dash'),
+    path('', admin_dash, name='admin_dash'),
     # path('shift', Shift_view, name='shift'),
     path('csv_view', Csv_view, name='csv'),
     # path('csv_view/<int:pk>', Csv_view, name='csv_pk'),
