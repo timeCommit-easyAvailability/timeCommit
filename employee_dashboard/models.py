@@ -22,15 +22,20 @@ class User_Schedule(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateField(auto_now=True)
 
+    class Meta:
+        unique_together = ('user', 'selected_shift',)
+        # unique_together = ('user', 'priority',)
+
     def __repr__(self):
-        return '<Shift: {} | Priority: {} | Status: {}>'.format(
+        return '<Shift: {} | Priority: {} | Status: {} | User: {} >'.format(
             self.selected_shift,
             self.priority,
             self.status,
+            self.user,
             )
 
     def __str__(self):
-        return '{} | {} | {}'.format(self.selected_shift, self.priority, self.status)
+        return '{} | {} | {}'.format(self.selected_shift, self.user, self.status)
 
 
 

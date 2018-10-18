@@ -4,7 +4,7 @@
 <h2> Approve/Assign Shifts </h2>
 
 <form method="post">
-  {% for shift in prefs %}
+  {% for shift in shifts %}
     <ul>
         <li>
         {{ shift.selected_shift__user_schedule__user__first_name }}

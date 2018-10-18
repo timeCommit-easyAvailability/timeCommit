@@ -62,38 +62,21 @@ class ApproveUserScheduleView(LoginRequiredMixin, ListView):
     success_url = reverse_lazy('dash/admin_dashboard.html')
     login_url = reverse_lazy('login')
 
-    shifts = list(User_Schedule.objects.values(
-        'selected_shift__user_schedule__user__first_name',
-        'selected_shift__user_schedule__user__last_name',
-        'selected_shift__day',
-        'selected_shift__start_time',
-        'selected_shift__end_time',
-        'priority',
-        'status',
-        ))
-    # import pdb; pdb.set_trace()
-
-# def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['transactions'] = Transaction.objects.filter(budget__user__username=self.request.user.username)
-#         return context
-
     def form_valid(self, form):
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
-        # context = super().get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        counter = 0
-        context['prefs'] = []
-        for i in self.shifts:
-            context['prefs'].append(dict(i))
-            counter += 1
+        context['shifts'] = User_Schedule.objects.values(
+            'selected_shift__user_schedule__user__first_name',
+            'selected_shift__user_schedule__user__last_name',
+            'selected_shift__day',
+            'selected_shift__start_time',
+            'selected_shift__end_time',
+            'priority',
+            'status',
+        ).distinct('id')
 
-        # for i in self.shifts:
-        #     context[i] += i
-        # context['first_name'] = User_Schedule.objects.values('selected_shift__user_schedule__user__first_name')
-        # import pdb; pdb.set_trace()
         return context
 
 
@@ -142,7 +125,7 @@ def Csv_view(request):
         'selected_shift__day',
         'selected_shift__start_time',
         'selected_shift__end_time',
-        )
+        ).distinct('id')
     get_date(shifts)
     return render_to_csv_response(shifts, field_order={
             'selected_shift__user_schedule__user__first_name'
