@@ -3,16 +3,18 @@
 {% block content %}
 <h1>save time!</h1>
 
-{% block title %}Home{% endblock %}
 
 {% if user.is_authenticated %}
+<nav>
+    <ul>
+      <li><a href="{% url "home" %}">Home</a></li>
+      <li><a href="{% url "schedules" %}">schedules</a></li>
+      <li><a href="{% url "shift" %}">shift</a></li>
+    </ul>
+  </nav>
 
-  <p><a href="{% url 'logout' %}">logout</a></p>
-  Hi {{ user.username }}!
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
+  <span>welcome page</span>
 {% endif %}
-
 
 {% endblock  %}
