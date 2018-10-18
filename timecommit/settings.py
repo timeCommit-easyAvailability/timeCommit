@@ -23,12 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
+SECRET_KEY = 'potatoes'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = strtobool(os.environ.get('DEBUG', 'False'))
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split()
-
-SECRET_KEY = 'xqx629r^5x8lj91o!vm_w5u2=@#cau7r*5buvby^k4*2285no&'
 
 
 # Application definition
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'timecommit.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ.get('DB_NAME', 'postgres'),
         'USER': os.environ.get('DB_USER', 'postgres'),
         'PASSWORD': os.environ.get('DB_PASSWORD', ''),
