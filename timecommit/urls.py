@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('employeedash/', include('employee_dashboard.urls')),
     path('admindash/', include('admin_dashboard.urls')),
-    # path('csv', include('admin_dashboard.urls')),
+    path('accounts/', include('django.contrib.auth.urls'))
 ]
