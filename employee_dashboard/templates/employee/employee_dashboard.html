@@ -7,6 +7,10 @@
 <section class="section_header"><p>Weekly shift avaliability</p></section>
 
 <div class="home_back">
+
+    <div id="schedule_direcitons">
+      Select three shifts prefrences and enter the order you prefer them into the day, and submit when you're done:
+    </div>
     <section class="weekdays">
 
 
@@ -26,7 +30,7 @@
         <div class="shift_day" id="sun">
 
             {% for shift in calendar.sunday %}
-            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
@@ -36,7 +40,7 @@
         <div class="shift_day" id="mon">
 
             {% for shift in calendar.monday %}
-            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
@@ -46,7 +50,7 @@
         <div class="shift_day" id="tue">
 
             {% for shift in calendar.tuesday %}
-            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
@@ -56,7 +60,7 @@
         <div class="shift_day" id="wed">
 
             {% for shift in calendar.wednesday %}
-            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
@@ -66,7 +70,7 @@
         <div class="shift_day" id="thu">
 
             {% for shift in calendar.thursday %}
-            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
@@ -76,7 +80,7 @@
         <div class="shift_day" id="fri">
 
           {% for shift in calendar.friday %}
-            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
@@ -86,7 +90,7 @@
         <div class="shift_day" id="sat">
 
           {% for shift in calendar.saturday %}
-            <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
+            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
