@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6d019030-b0ea-4ea0-8adb-b6606e34e313" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="DockerExecCommand">
+    <ExecCommand>
+      <option name="command" value="docker exec -it /timecommit_web_1 bash" />
+      <option name="imageId" value="timecommit_web" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="docker exec -it  bash" />
+      <option name="imageId" value="postgres" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="docker exec -it /timecommit_db_1 bash" />
+      <option name="imageId" value="postgres" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="docker exec -it postgres-container bash" />
+      <option name="imageId" value="postgres" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="docker exec -it timecommit_db_1 bash" />
+      <option name="imageId" value="postgres" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="docker exec -it timecommit_db_1 psql -U postgres" />
+      <option name="imageId" value="postgres" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="exec -it 72777b3f8d53a bash" />
+      <option name="imageId" value="postgres" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="exec -it timecommit_db_1 psql" />
+      <option name="imageId" value="postgres" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="exec -it timecommit_db_1 psql -U postgres" />
+      <option name="imageId" value="postgres" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="sudo docker exec -it 7277b3f8d53a bash" />
+      <option name="imageId" value="postgres" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="sudo docker exec -it 7277b3f8d53a psql -U postgres" />
+      <option name="imageId" value="postgres" />
+    </ExecCommand>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-871848608">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="AlchemyModelDependency/#timeCommit" value="2" />
+          <entry key="DATABASE/dfadbe7b-fd57-494f-a2e4-477008c50480" value="1" />
+          <entry key="DjangoModelDependency/#timeCommit" value="3" />
+          <entry key="Dockerfile" value="1" />
+          <entry key="JavaScript-modules-diagram//home/j/Desktop/timeCommit/admin_dashboard/migrations" value="1" />
+          <entry key="Python/#/home/j/Desktop/timeCommit/admin_dashboard" value="1" />
+          <entry key="Python/#/home/j/Desktop/timeCommit/timecommit" value="1" />
+          <entry key="csv" value="1" />
+          <entry key="env" value="2" />
+          <entry key="py" value="6" />
+          <entry key="sql" value="2" />
+          <entry key="yml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key=".env file" value="2" />
+          <entry key="CSV" value="1" />
+          <entry key="Dockerfile" value="1" />
+          <entry key="Python" value="3" />
+          <entry key="Scratch" value="2" />
+          <entry key="UML" value="12" />
+          <entry key="YAML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="env" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key=".env file" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/admin_dashboard/admin.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="35" />
+    <option name="width" value="1920" />
+    <option name="height" value="2125" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="timeCommit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="timeCommit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="timeCommit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="timeCommit" type="462c0819:PsiDirectoryNode" />
+              <item name="timecommit" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+    <configuration name="Test: " type="DjangoTestsConfigurationType" factoryName="Django tests" temporary="true">
+      <module name="timeCommit" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="timeCommit" type="Python.DjangoServer" factoryName="Django server">
+      <module name="timeCommit" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="timecommit.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Dockerfile" />
+          <option name="startBrowserSettings">
+            <browser url="http://127.0.0.1" />
+          </option>
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+          <option name="startBrowserSettings">
+            <browser url="http://127.0.0.1" />
+          </option>
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django server.timeCommit" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Docker.Dockerfile" />
+      <item itemvalue="Django tests.Test: " />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: " />
+        <item itemvalue="Docker.Dockerfile" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6d019030-b0ea-4ea0-8adb-b6606e34e313" name="Default Changelist" comment="" />
+      <created>1539721466980</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1539721466980</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="35" width="3840" height="2125" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15298508" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32956383" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="Docker" order="7" visible="true" weight="0.58696824" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32956383" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32995737" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.32995737" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/timecommit/settings.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/admin_dashboard/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_dashboard/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="917">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/j/Desktop/timeCommit/admin_dashboard/urls.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/j/Desktop/timeCommit/admin_dashboard/urls.py</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="973.0" y="621.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//home/j/Desktop/timeCommit/admin_dashboard/migrations">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/admin_dashboard/migrations</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="973.0" y="621.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/j/Desktop/timeCommit/admin_dashboard/models.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/j/Desktop/timeCommit/admin_dashboard/models.py</OriginalElement>
+          <nodes>
+            <node x="" y="">admin_dashboard.models.Scheduler</node>
+            <node x="" y="">admin_dashboard.models.Company</node>
+            <node x="" y="">Model</node>
+            <node x="" y="">admin_dashboard.models.Shift</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="787.0" y="83.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/j/Desktop/timeCommit/manage.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/j/Desktop/timeCommit/manage.py</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="973.0" y="621.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://AlchemyModelDependency/#timeCommit">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>AlchemyModelDependency</ID>
+          <OriginalElement>#timeCommit</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="973.0" y="621.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/foo.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/j/Desktop/timeCommit/timecommit">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/j/Desktop/timeCommit/timecommit</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="973.0" y="621.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dfadbe7b-fd57-494f-a2e4-477008c50480/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="uml://DjangoModelDependency/#timeCommit">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DjangoModelDependency</ID>
+          <OriginalElement>#timeCommit</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="973.0" y="621.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/dfadbe7b-fd57-494f-a2e4-477008c50480">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>dfadbe7b-fd57-494f-a2e4-477008c50480</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="973.0" y="621.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/edfb5b2d-6fa2-48cb-9b5a-1b52602cd9d0/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timecommit/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7755">
+          <folding>
+            <element signature="e#311#320#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/home/j/Desktop/timeCommit/admin_dashboard">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/j/Desktop/timeCommit/admin_dashboard</OriginalElement>
+          <nodes>
+            <node x="0.0" y="329.0">admin_dashboard.models.Scheduler</node>
+            <node x="0.0" y="540.0">admin_dashboard.apps.AdminDashboardConfig</node>
+            <node x="1044.0" y="329.0">admin_dashboard.models.Company</node>
+            <node x="242.5" y="432.0">AppConfig</node>
+            <node x="0.0" y="118.0">admin_dashboard.admin.ScheduleAdmin</node>
+            <node x="732.0" y="540.0">admin_dashboard.admin.UserAdmin</node>
+            <node x="717.5" y="221.0">Model</node>
+            <node x="1188.0" y="118.0">admin_dashboard.admin.ShiftAdmin</node>
+            <node x="968.4833333333332" y="0.0">ExportMixin</node>
+            <node x="592.5249999999999" y="0.0">ModelAdmin</node>
+            <node x="615.0" y="118.0">admin_dashboard.admin.CompAdmin</node>
+            <node x="753.0" y="432.0">ImportExportActionModelAdmin</node>
+            <node x="556.0" y="329.0">admin_dashboard.models.Shift</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="admin_dashboard.admin.ShiftAdmin" target="ModelAdmin">
+              <point x="-134.5" y="-29.0" />
+              <point x="1322.5" y="88.0" />
+              <point x="784.1916666666666" y="88.0" />
+              <point x="76.66666666666674" y="29.0" />
+            </edge>
+            <edge source="admin_dashboard.admin.CompAdmin" target="ExportMixin">
+              <point x="138.25" y="-29.0" />
+              <point x="1029.75" y="98.0" />
+              <point x="1079.4833333333331" y="98.0" />
+              <point x="0.0" y="29.0" />
+            </edge>
+            <edge source="admin_dashboard.admin.ScheduleAdmin" target="ExportMixin">
+              <point x="148.75" y="-29.0" />
+              <point x="446.25" y="98.0" />
+              <point x="1005.4833333333332" y="98.0" />
+              <point x="-74.0" y="29.0" />
+            </edge>
+            <edge source="admin_dashboard.apps.AdminDashboardConfig" target="AppConfig">
+              <point x="0.0" y="-29.0" />
+              <point x="0.0" y="29.0" />
+            </edge>
+            <edge source="admin_dashboard.models.Scheduler" target="Model">
+              <point x="0.0" y="-29.0" />
+              <point x="268.0" y="304.0" />
+              <point x="741.6666666666666" y="304.0" />
+              <point x="-48.33333333333337" y="29.0" />
+            </edge>
+            <edge source="admin_dashboard.admin.UserAdmin" target="ImportExportActionModelAdmin">
+              <point x="0.0" y="-29.0" />
+              <point x="0.0" y="29.0" />
+            </edge>
+            <edge source="admin_dashboard.admin.CompAdmin" target="ModelAdmin">
+              <point x="-138.25" y="-29.0" />
+              <point x="753.25" y="88.0" />
+              <point x="707.5249999999999" y="88.0" />
+              <point x="0.0" y="29.0" />
+            </edge>
+            <edge source="admin_dashboard.admin.ShiftAdmin" target="ExportMixin">
+              <point x="134.5" y="-29.0" />
+              <point x="1591.5" y="78.0" />
+              <point x="1153.4833333333331" y="78.0" />
+              <point x="74.0" y="29.0" />
+            </edge>
+            <edge source="admin_dashboard.models.Shift" target="Model">
+              <point x="0.0" y="-29.0" />
+              <point x="0.0" y="29.0" />
+            </edge>
+            <edge source="admin_dashboard.models.Company" target="Model">
+              <point x="0.0" y="-29.0" />
+              <point x="1308.5" y="304.0" />
+              <point x="838.3333333333334" y="304.0" />
+              <point x="48.33333333333337" y="29.0" />
+            </edge>
+            <edge source="admin_dashboard.admin.ScheduleAdmin" target="ModelAdmin">
+              <point x="-148.75" y="-29.0" />
+              <point x="148.75" y="88.0" />
+              <point x="630.8583333333333" y="88.0" />
+              <point x="-76.66666666666663" y="29.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="130.0" y="-30.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

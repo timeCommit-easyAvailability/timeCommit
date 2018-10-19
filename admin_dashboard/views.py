@@ -24,11 +24,13 @@ def about_view(request):
 
 
 def admin_dash(request):
+    if not request.user.is_staff:
+        return redirect(reverse('home'))
     return render(request, 'dash/admin_dashboard.html')
 
 
 def Company_view(request):
-    if not request.user.is_authenticated:
+    if not request.user.is_staff:
         return redirect(reverse('login'))
     company = Company.objects.all()
 
@@ -39,7 +41,7 @@ def Company_view(request):
 
 
 def Shift_view(request):
-    if not request.user.is_authenticated:
+    if not request.user.is_staff:
         return redirect(reverse('login'))
     shifts = Shift.objects.all()
 
@@ -64,7 +66,7 @@ class CreateShiftView(LoginRequiredMixin, CreateView):
     template_name = 'dash/create_shift.html'
     model = Shift
     form_class = ShiftForm
-    success_url = reverse_lazy('dash/admin_dashboard.html')
+    success_url = reverse_lazy('admin_dash')
     login_url = reverse_lazy('login')
 
     def form_valid(self, form):
@@ -72,8 +74,8 @@ class CreateShiftView(LoginRequiredMixin, CreateView):
 
 
 def approve_user_schedule_view(request):
-    if not request.user.is_authenticated:
-        raise PermissionDenied
+    if not request.user.is_staff:
+        return redirect(reverse('login'))
 
     all_schedules = list(get_list_or_404(User_Schedule))
 
@@ -137,7 +139,7 @@ def approve_user_schedule_view(request):
 
 
 def Csv_view(request):
-    if not request.user.is_authenticated:
+    if not request.user.is_staff:
         return redirect(reverse('login'))
 
     def get_date(shifts):
