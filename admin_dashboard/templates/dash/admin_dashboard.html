@@ -2,13 +2,34 @@
 
 {% block content %}
 <div class="admin_dash">
-  <h1>Staff / Admin Panel</h1>
-    <ul>
-      <li><a href="{% url "schedules" %}">Schedule</a></li>
-      <li><a href="{% url "shifts" %}">Approve Shifts</a></li>
-      <li><a href="{% url "shift" %}">Create Shift</a></li>
-      <li><a href="{% url "create_company" %}">Company</a></li>
-      <li><a href="{% url "csv" %}">Export as .CSV</a></li>
-    </ul>
-</div>
+  <h1>Staff / Admin Panel</h1><br><br>
+
+    {% if user.is_staff %}
+    <h2>View current schedule:</h2>
+    <div class="button_body">
+    <a href="{% url "schedules" %}">View</a>
+    </div><br><br>
+
+    <h2>View and approve employee shift prefrences:</h2>
+    <div class="button_body">
+    <a href="{% url "shifts" %}">View</a>
+    </div><br><br>
+
+    <h2>Put new shift on the calendar:</h2>
+    <div class="button_body">
+    <a href="{% url "shift" %}">Insert</a>
+    </div><br><br>
+
+    <h2>Update compant details:</h2>
+    <div class="button_body">
+    <a href="{% url "create_company" %}">Update</a>
+    </div><br><br>
+
+    <h2>Export approved schedules as a csv file:</h2>
+    <div class="button_body">
+    <a href="{% url "csv" %}">Export</a>
+    </div><br><br>
+
+    {% endif %}
+
 {% endblock content %}

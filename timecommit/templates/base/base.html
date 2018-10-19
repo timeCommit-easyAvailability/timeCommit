@@ -9,34 +9,52 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Base.html</title>
     <link rel="stylesheet" href="{% static "styles/main.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Roboto|Space+Mono" rel="stylesheet">
 
   </head>
 
   <body>
+
+    <section id="header_top_space">
+        <div id="namebox">
+            {% if user.is_authenticated %}
+            <div>{{ user.username }}</div>
+            {% endif %}
+          </div>
+    </section>
+
     <header id="base_header">
 
+
       <div id="logobox">
-        {% comment %} logo from assets goes here {% endcomment %}
+          <a href="{% url "home" %}"><img id="logo" src="{% static 'img/timeCommit_main.png' %}" id="main_logo" alt="time"></a>
       </div>
 
-      <div id="namebox">
+      <div id="logo_link"></div>
+
         {% if user.is_authenticated %}
-          <a href="{% url "home" %}">Home</a>
-          <a href="{% url "schedules" %}">schedules</a>
-          <a href="{% url "shift" %}">shift</a>
-          <a href="{% url 'logout' %}">logout</a>
-          <a href="{% url "about" %}">about</a>
+
+
           {% if user.is_staff %}
-          <a href="{% url 'admin_dash' %}">Admin dashboard</a>
+          <div class="button_wrap">
+            <a href="{% url 'admin_dash' %}">Admin dash</a>
+          </div>
           {% endif %}
 
-          <span>Logged in as: {{ user.username }}</span>
+
           {% else %}
-          <a href="{% url "about" %}">about</a>
-          <a href="{% url 'login' %}">login</a>
+          <div class="button_wrap" id="login_button_div">
+            <a href="{% url 'login' %}">login</a>
+          </div>
+
         {% endif %}
 
-      </div>
+          {% if user.is_authenticated %}
+          <div class="button_wrap" id= "logchange">
+          <a href="{% url 'logout' %}">logout</a>
+          </div>
+          {% endif %}
+
 
     </header>
 
@@ -47,5 +65,9 @@
     </main>
 
   </body>
+
+  <footer>
+    <a href="{% url "about" %}">about</a>
+  </footer>
 
 </html>
