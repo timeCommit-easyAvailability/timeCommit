@@ -4,10 +4,9 @@
 {% load static %}
 
 
-<section id="caltop"><p>Weekly shift avaliability</p></section>
+<section class="section_header"><p>Weekly shift avaliability</p></section>
 
-<section id="topspacer"></section>
-
+<div class="home_back">
     <section class="weekdays">
 
 
@@ -98,6 +97,14 @@
 
     </form>
 
+  <section class="submit_section">
     <button type="submit" name="list" form="cal_select" value="Submit">Submit</button>
+  </section>
 
+  </div>
+  {% if user.is_staff %}
+  <div class="button_body">
+      <a href="{% url 'admin_dash' %}">< dash</a>
+    </div><br>
+    {% endif %}
 {% endblock content %}

@@ -2,27 +2,38 @@
 
 {% block content %}
 
+<section class="section_header"><p>Home</p></section>
 
-<nav>
-    <ul>
-      <li><a href="{% url "home" %}">Home</a></li>
-      <li><a href="{% url "about" %}">About</a></li>
-      {% if user.is_authenticated %}
-      <a href="{% url 'logout' %}">Logout</a>
-      {% else %}
-      <li><a href="{% url "login" %}">Login / Register</a></li>
-      {% endif %}
-    </ul>
-  </nav>
+<div class="home_back">
+
+Welcome to time commit!<br><br><br>
+
 
 {% if user.is_authenticated %}
-  <nav>
-    <ul>
-      <li><a href="{% url "home" %}">Home</a></li>
-      <a href="{% url "logout" %}">Logout</a>
-    </ul>
-  </nav>
 
-{% endif %}
+<h2>To select and submit your own shift prefrences:</h2>
+<div class="button_body">
+    <a href="{% url "schedules" %}">submit</a>
+</div><br><br>
+
+
+          {% if user.is_staff %}
+          <h2>Go to the admin dashboard:</h2>
+          <div class="button_body">
+            <a href="{% url 'admin_dash' %}">admin dash</a>
+          </div><br><br>
+          {% endif %}
+          {% endif %}
+
+  {% if user.is_superuser %}
+  <h2>You are logged in as SuperUser</h2>
+  <h2>You can manage the site directly via Django superuser console:</h2>
+  <h2>http://localhost:8000/admin/</h2>
+  <h2>this includes admin and manual data management</h2>
+  {% endif %}
+
+</div>
+
+
 
 {% endblock  %}
