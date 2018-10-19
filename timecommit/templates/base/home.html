@@ -1,20 +1,28 @@
 {% extends "base/base.html" %}
 
 {% block content %}
-<h1>save time!</h1>
 
 
-{% if user.is_authenticated %}
 <nav>
     <ul>
       <li><a href="{% url "home" %}">Home</a></li>
-      <li><a href="{% url "schedules" %}">schedules</a></li>
-      <li><a href="{% url "shift" %}">shift</a></li>
+      <li><a href="{% url "about" %}">About</a></li>
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}">Logout</a>
+      {% else %}
+      <li><a href="{% url "login" %}">Login / Register</a></li>
+      {% endif %}
     </ul>
   </nav>
 
-{% else %}
-  <span>welcome page</span>
+{% if user.is_authenticated %}
+  <nav>
+    <ul>
+      <li><a href="{% url "home" %}">Home</a></li>
+      <a href="{% url "logout" %}">Logout</a>
+    </ul>
+  </nav>
+
 {% endif %}
 
 {% endblock  %}

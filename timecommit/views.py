@@ -7,3 +7,7 @@ def home_view(request):
 
 def about_view(request):
     return render(request, 'base/about.html')
+
+
+def register_view(request):
+    return render(request, 'django_registration/registration_form.html')
