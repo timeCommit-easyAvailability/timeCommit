@@ -20,19 +20,13 @@ Database Tables:
 
 Admins maintain the system by approving users hours, adjusting the days/timeslots based on need, and approve an employee's choices. Once approved, the system emails the employee a notification that their choices have been approved. Users and managers will be able to sign in and see the schedule at any time.
 
-<<<<<<< HEAD
-=======
 #### Development:
 
 ##### Git-flow
-![gitflow](https://github.com/timeCommit-easyAvailability/timeCommit/blob/master/assets/gitflow.jpg) <br>
->>>>>>> f26dfa9b7ffb94f1d91c3a381b77a51c8e92b93c
+![gitflow](https://github.com/timeCommit-easyAvailability/timeCommit/blob/master/assets/myapp_models.png) <br>
 
 #### License:
 - MIT License
-
-#### Change Log:
-10-04-2018 Created README
 
 ```python
 Chris Turner, J Christie, Jason Burns, Stephen Harper
