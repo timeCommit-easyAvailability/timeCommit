@@ -27,10 +27,10 @@
           <a href="{% url 'logout' %}">logout</a>
           <a href="{% url "about" %}">about</a>
           {% if user.is_staff %}
-          <a href="{% url 'admin_dash' %}">admin_dash</a>
+          <a href="{% url 'admin_dash' %}">Admin dashboard</a>
           {% endif %}
 
-          <span>{{ user.username }}</span>
+          <span>Logged in as: {{ user.username }}</span>
           {% else %}
           <a href="{% url "about" %}">about</a>
           <a href="{% url 'login' %}">login</a>
