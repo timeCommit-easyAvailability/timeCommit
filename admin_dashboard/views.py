@@ -133,7 +133,7 @@ def approve_user_schedule_view(request):
             'priority': schedule.priority,
             'status': schedule.status,
             'needed': schedule.selected_shift.employees_required,
-            'assigned': schedule.selected_shift.employees_assigned,
+            'assigned': len(schedule.selected_shift.employees_assigned),
         }
         schedules.append(new_schedule)
 
