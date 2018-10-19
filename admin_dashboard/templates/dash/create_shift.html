@@ -1,10 +1,13 @@
 {% extends "dash/admin_dashboard.html" %}
 
 {% block content %}
-<h2> Create Shifts </h2>
+<section class="section_header"><p>Create Shifts</p></section>
+<div class="home_back">
+
 <form method="post">
   {{ form.as_p }}
   {% csrf_token %}
   <input type="submit" value="save">
 </form>
+</div>
 {% endblock content %}

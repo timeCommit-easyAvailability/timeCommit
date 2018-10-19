@@ -1,8 +1,10 @@
 {% extends "base/base.html" %}
 
 {% block content %}
+
+<section class="section_header"><p>Staff / Admin Dashboard</p></section>
+
 <div class="admin_dash">
-  <h1>Staff / Admin Panel</h1><br><br>
 
     {% if user.is_staff %}
     <h2>View current schedule:</h2>
@@ -20,7 +22,7 @@
     <a href="{% url "shift" %}">Insert</a>
     </div><br><br>
 
-    <h2>Update compant details:</h2>
+    <h2>Update company details:</h2>
     <div class="button_body">
     <a href="{% url "create_company" %}">Update</a>
     </div><br><br>

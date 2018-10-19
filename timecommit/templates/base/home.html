@@ -2,6 +2,16 @@
 
 {% block content %}
 
+<section class="section_header"><p>Home</p></section>
+
+<div class="home_back">
+
+Welcome to time commit! If you're here to declare your avaliable hours and shift prefrences:<br><br>
+1] click 'log in'<br><br>
+2] create yourself an account to keep track of your schedule request<br><br>
+3] submit and you're done!<br><br>
+
+
 {% if user.is_authenticated %}
 
 <div class="button_body">
@@ -9,5 +19,5 @@
 </div>
 
 {% endif %}
-
+</div>
 {% endblock  %}
