@@ -14,4 +14,6 @@ def about_view(request):
 
 
 def register_view(request):
+    """Returns the registration view
+    """
     return render(request, 'django_registration/registration_form.html')

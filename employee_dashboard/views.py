@@ -75,8 +75,7 @@ def employee_dashboard_view(request):
 
     context = {
         'calendar': days_of_the_week,
-        # 'all_projects': all_shifts
-
     }
 
+    # renders employee dashboard upon request
     return render(request, 'employee/employee_dashboard.html', context=context)

@@ -8,21 +8,29 @@ from employee_dashboard.models import User_Schedule
 
 @admin.register(Shift)
 class ShiftAdmin(ExportMixin, admin.ModelAdmin):
+    """non-functional atm
+    """
     pass
 
 
 @admin.register(Company)
 class CompAdmin(ExportMixin, admin.ModelAdmin):
+    """non-functional atm
+    """
     pass
 
 
 @admin.register(User_Schedule)
 class ScheduleAdmin(ExportMixin, admin.ModelAdmin):
+    """non-functional atm
+    """
     pass
 
 
 @admin.register(Scheduler)
 class UserAdmin(ImportExportActionModelAdmin):
+    """the useradmin is based on the scheduler model and will exclude the id
+    """
     class Meta:
         model = Scheduler
         # include = ('subject', 'start_date', 'description')
