@@ -16,12 +16,13 @@ class TestIfSchedulerModelExists(TestCase):
     assert Scheduler
 
 
-# class TestAdmin_AdminCanLogin(TestCase):
-#     # Admin logs in
-#     def setUp(self):
-#         self.user = User.objects.create(email='test@example.com')
-#         self.user.set_password('hello')
-#     # Test to see if Admin sees Admin dashboard or Admin View
+class TestAdmin_AdminCanLogin(TestCase):
+    # Admin logs in
+    def setUp(self):
+        self.user = User.objects.create(email='test@example.com')
+        self.user.set_password('hello')
+    # Test to see if Admin sees Admin dashboard or Admin View
+
 
 
 # # Create your tests here.
@@ -33,4 +34,11 @@ class TestIfSchedulerModelExists(TestCase):
 
 
 # class TestShiftModel(TestCase):
+
+# class TestAbleToCreateShifts(TestCase):
+
+# class TestCSVFileExists(TestCase):
+
+# class TestCompanyCreated(TestCase):
+
 

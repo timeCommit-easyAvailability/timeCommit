@@ -12,14 +12,20 @@ from employee_dashboard.models import User_Schedule
 
 
 def about_view(request):
+    """Shows the about page view
+    """
     return render(request, 'base/about.html')
 
 
 def admin_dash(request):
+    """Shows the Admin dashboard
+    """
     return render(request, 'dash/admin_dashboard.html')
 
 
 def Company_view(request):
+    """This shows the company view
+    """
     if not request.user.is_authenticated:
         return redirect(reverse('login'))
     company = Company.objects.all()
@@ -31,6 +37,8 @@ def Company_view(request):
 
 
 def Shift_view(request):
+    """Shows the shifts on the admin dashboard
+    """
     if not request.user.is_authenticated:
         return redirect(reverse('login'))
     shifts = Shift.objects.all()
@@ -42,6 +50,8 @@ def Shift_view(request):
 
 
 class CreateCompanyView(LoginRequiredMixin, CreateView):
+    """This will create the company view. If successful valid login from admin, goes to dashboard. If not, goes to login page.
+    """
     template_name = 'dash/create_company.html'
     model = Company
     form_class = CompanyForm
@@ -53,6 +63,8 @@ class CreateCompanyView(LoginRequiredMixin, CreateView):
 
 
 class CreateShiftView(LoginRequiredMixin, CreateView):
+    """This will create the Shift view. If successful valid login from admin, goes to dashboard. If not, goes to login page.
+    """
     template_name = 'dash/create_shift.html'
     model = Shift
     form_class = ShiftForm
@@ -64,6 +76,8 @@ class CreateShiftView(LoginRequiredMixin, CreateView):
 
 
 class ApproveUserScheduleView(LoginRequiredMixin, ListView):
+    """This will approve the shifts for the specified shift id. If successful valid login from admin, goes to admin dashboard. If not, goes to login page.
+    """
     template_name = 'dash/approve_shifts.html'
     model = User_Schedule
     form_class = UserScheduleForm
@@ -89,6 +103,8 @@ class ApproveUserScheduleView(LoginRequiredMixin, ListView):
 
 
 def Csv_view(request):
+    """If user is not authenticated, go back to login. This will return the CSV file with the days of the shift, the next weekday, the user's schedule based on their id.
+    """
     if not request.user.is_authenticated:
         return redirect(reverse('login'))
 

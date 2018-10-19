@@ -4,6 +4,8 @@ from admin_dashboard.models import Shift
 
 
 class User_Schedule(models.Model):
+    """
+    """
     PRIORITY = [
         (1, 'Highest'),
         (2, 'Medium'),
