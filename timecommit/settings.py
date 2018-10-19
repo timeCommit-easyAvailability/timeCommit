@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_registration',
     'import_export',
     'rest_framework',
+    'django_nose',
     'django_extensions',
 ]
 
@@ -157,3 +158,6 @@ else:
 LOGOUT_REDIRECT_URL = 'home'
 
 LOGIN_REDIRECT_URL = 'schedules'
+
+# Testing with Django Nose
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'

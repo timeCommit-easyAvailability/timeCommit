@@ -26,7 +26,7 @@ class Shift(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateField(auto_now=True)
 
-    def __repr__(self):
+    def __repr__(self):  # pragma: no cover
         return '<Shift Day: {} | Start: {} | End: {} | Volunteers Required: {} | Volunteers: {}>'.format(
             self.day,
             self.start_time,
@@ -35,7 +35,7 @@ class Shift(models.Model):
             self.employees_assigned
             )
 
-    def __str__(self):
+    def __str__(self):  # pragma: no cover
         return 'Day: {} | Start time: {} | End Time: {}'.format(
             self.day,
             self.start_time,
@@ -52,14 +52,14 @@ class Company(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateField(auto_now=True)
 
-    def __repr__(self):
+    def __repr__(self):  # pragma: no cover
         return '<Company Name: {} | Address: {} | Contact Email: {}>'.format(
             self.company_name,
             self.address,
             self.contact_email
             )
 
-    def __str__(self):
+    def __str__(self):  # pragma: no cover
         return '{} | {} | {}'.format(
             self.company_name,
             self.address,
@@ -74,14 +74,14 @@ class Scheduler(models.Model):
     start_date = models.DateField()
     description = models.CharField(max_length=254)
 
-    def __repr__(self):
+    def __repr__(self):  # pragma: no cover
         return 'Subject {} | Start Date: {} | Description: {}'.format(
             self.subject,
             self.start_date,
             self.description
             )
 
-    def __str__(self):
+    def __str__(self):  # pragma: no cover
         return '{} {} {}'.format(
             self.subject,
             self.description,
