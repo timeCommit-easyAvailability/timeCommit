@@ -278,6 +278,13 @@ footer{
     text-align: center;
 }
 
+#schedule_direcitons{
+    width: 70vw;
+    /* padding-top: 20px; */
+    padding-bottom: 20px;
+
+}
+
 .shift_table {
     display: flex;
     flex-wrap: wrap;
@@ -286,11 +293,14 @@ footer{
 }
 
 .shift_day {
+
     width: 13%;
     text-align: center;
     }
 
 .shift {
+    height: 37px;
+    justify-content: space-between;
     background-color: #9aa;
     box-sizing: border-box;
     border-radius: 3px;
@@ -299,6 +309,10 @@ footer{
     margin-top: 5px;
     color: white;
     }
+
+.shift input{
+    float: right;
+}
 
 .shift form {
     padding-left: 10px;
