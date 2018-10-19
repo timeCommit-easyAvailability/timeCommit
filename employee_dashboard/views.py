@@ -6,6 +6,11 @@ from operator import itemgetter
 
 
 def employee_dashboard_view(request):
+    """if user is not authenticated, return permission denied error.
+    for shift, show the days of the week. and iterate through all of the
+    shifts with the start time and end time. and show the days of
+    the week on the calendar. return to the employee dashboard.
+    """
     if not request.user.is_authenticated:
         return redirect(reverse('login'))
 
