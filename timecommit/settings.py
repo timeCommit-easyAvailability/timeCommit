@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'import_export',
     'rest_framework',
     'django_nose',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
