@@ -1,8 +1,27 @@
+/* /// BASE /// */
+
 body{
     width: 80%;
     margin: 0 auto;
-    background-color: #e    ff;
+    color: #999;
+    background-color: #eff;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: #555;
   }
+
+#base_header{
+    height: 2em;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: #555;
+}
+
+/* /// BASE /// */
+
+/* /// CALENDAR /// */
 
 #topspacer {
     height: 5px;
@@ -71,4 +90,6 @@ body{
 .shift form input {
     width:15%;
     }
+
+/* /// CALENDAR /// */
 
