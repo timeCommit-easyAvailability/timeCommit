@@ -24,6 +24,7 @@ class User_Schedule(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateField(auto_now=True)
 
+
     class Meta:
         unique_together = ('user', 'selected_shift',)
 

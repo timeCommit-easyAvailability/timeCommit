@@ -11,3 +11,7 @@ def about_view(request):
     """Returns the About page view
     """
     return render(request, 'base/about.html')
+
+
+def register_view(request):
+    return render(request, 'django_registration/registration_form.html')

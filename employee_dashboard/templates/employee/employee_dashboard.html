@@ -4,10 +4,9 @@
 {% load static %}
 
 
-<section id="caltop"><p>Weekly shift avaliability</p></section>
+<section class="section_header"><p>Weekly shift avaliability</p></section>
 
-<section id="topspacer"></section>
-
+<div class="home_back">
     <section class="weekdays">
 
 
@@ -21,14 +20,14 @@
 
     </section>
 
-    <form id="cal_select">
+    <form method="post" id="cal_select"> {% csrf_token %}
 
       <section class="shift_table">
         <div class="shift_day" id="sun">
 
             {% for shift in calendar.sunday %}
             <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-              <input></input>
+              <input name="{{shift.id}}">
             </div>
             {% endfor %}
 
@@ -38,7 +37,7 @@
 
             {% for shift in calendar.monday %}
             <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-              <input></input>
+              <input name="{{shift.id}}">
             </div>
             {% endfor %}
 
@@ -48,7 +47,7 @@
 
             {% for shift in calendar.tuesday %}
             <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-              <input></input>
+              <input name="{{shift.id}}">
             </div>
             {% endfor %}
 
@@ -58,7 +57,7 @@
 
             {% for shift in calendar.wednesday %}
             <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-              <input></input>
+              <input name="{{shift.id}}">
             </div>
             {% endfor %}
 
@@ -68,7 +67,7 @@
 
             {% for shift in calendar.thursday %}
             <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-              <input></input>
+              <input name="{{shift.id}}">
             </div>
             {% endfor %}
 
@@ -78,7 +77,7 @@
 
           {% for shift in calendar.friday %}
             <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-              <input></input>
+              <input name="{{shift.id}}">
             </div>
             {% endfor %}
 
@@ -88,7 +87,7 @@
 
           {% for shift in calendar.saturday %}
             <div class="shift"><p>{{shift.start_time}} - {{shift.end_time}}</p>
-              <input></input>
+              <input name="{{shift.id}}">
             </div>
             {% endfor %}
 
@@ -98,6 +97,14 @@
 
     </form>
 
-    <button type="submit" form="cal_select" value="Submit">Submit</button>
+  <section class="submit_section">
+    <button type="submit" name="list" form="cal_select" value="Submit">Submit</button>
+  </section>
 
+  </div>
+  {% if user.is_staff %}
+  <div class="button_body">
+      <a href="{% url 'admin_dash' %}">< dash</a>
+    </div><br>
+    {% endif %}
 {% endblock content %}

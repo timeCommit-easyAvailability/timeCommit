@@ -7,7 +7,7 @@ from .views import (
     Csv_view,
     CreateCompanyView,
     CreateShiftView,
-    ApproveUserScheduleView,
+    approve_user_schedule_view,
 )
 
 
@@ -16,5 +16,5 @@ urlpatterns = [
     path('csv_view', Csv_view, name='csv'),
     path('create_company', CreateCompanyView.as_view(), name='create_company'),
     path('create_shift', CreateShiftView.as_view(), name='shift'),
-    path('shifts', ApproveUserScheduleView.as_view(), name='shifts'),
+    path('shifts', approve_user_schedule_view, name='shifts'),
 ]
