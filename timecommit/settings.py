@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_registration',
     'import_export',
     'rest_framework',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
