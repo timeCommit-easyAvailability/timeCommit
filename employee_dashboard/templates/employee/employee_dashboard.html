@@ -10,7 +10,15 @@
 <div class="home_back">
 
     <div id="schedule_direcitons">
-      Select three shifts prefrences and enter the order you prefer them into the day, and submit when you're done:
+      Rank your shift prefrences below as a 1, 2, or 3.<br><br>
+      <div><ul id="color_key">
+        Employees needed:
+        <li><p>0</p><div id="color_0"></div></li>
+        <li><p>1</p><div id="color_1"></div></li>
+        <li><p>2</p><div id="color_2"></div></li>
+        <li><p>3</p><div id="color_3"></div></li>
+
+      </ul></div>
     </div>
     <section class="weekdays">
 
@@ -123,7 +131,7 @@
   </div>
   {% if user.is_staff %}
   <div class="button_body">
-      <a href="{% url 'admin_dash' %}">< dash</a>
+      <a href="{% url 'admin_dash' %}">back to dash</a>
     </div><br>
     {% endif %}
 
