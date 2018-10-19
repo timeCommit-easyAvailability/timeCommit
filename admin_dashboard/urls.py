@@ -10,7 +10,7 @@ from .views import (
     approve_user_schedule_view,
 )
 
-
+# routing
 urlpatterns = [
     path('', admin_dash, name='admin_dash'),
     path('csv_view', Csv_view, name='csv'),

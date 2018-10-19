@@ -108,12 +108,17 @@ class ApproveUserScheduleView(LoginRequiredMixin, ListView):
             'priority',
             'status',
         ).distinct('id')
+
+
 def approve_user_schedule_view(request):
+    """The functionality of the approval process for the user schedule view.
+    """
     if not request.user.is_staff:
         return redirect(reverse('login'))
-      
+
     all_schedules = list(get_list_or_404(User_Schedule))
 
+    # this will iterate through all of the schedules based on the names, shifts, times, status and how many are needed
     schedules = []
     for schedule in all_schedules:
 
@@ -132,11 +137,12 @@ def approve_user_schedule_view(request):
         }
         schedules.append(new_schedule)
 
+    # this will decode the schedules and split them into each list according to those assigned and approved by admin
     if 'list' in request.POST:
         decoded_schedules = request.body.decode().split('&')
         split_schedules = []
         admin_assigned_schedules = []
-        # refactor inefficient declations eventually
+        # refactor inefficient declarations eventually
         true_schedules = []
 
         for i in decoded_schedules:
@@ -152,8 +158,8 @@ def approve_user_schedule_view(request):
 
         true_schedules = dict(true_schedules)
 
+        # iterates through the true schedules and filters by the user's and shift id's and appends each other to the database
         for key, values in true_schedules.items():
-
             User_Schedule.objects.filter(pk=key).update(status='True')
             user_id = User_Schedule.objects.values().filter(pk=key)[0]['user_id']
             shift_id = User_Schedule.objects.values().filter(pk=key)[0]['selected_shift_id']
@@ -162,15 +168,16 @@ def approve_user_schedule_view(request):
                 ass_emp.append(user_id)
             else:
                 raise ValueError("You can't have the same shift twice")
-
+            # filters out the shifts by the id and will update the assigned employees (ass_emp)
             Shift.objects.filter(pk=shift_id).update(employees_assigned=ass_emp)
 
         return HttpResponseRedirect('shifts')
     context = {
         'schedules': schedules,
     }
-
+    # returns the approved shifts upon render
     return render(request, 'dash/approve_shifts.html', context=context)
+
 
 def Csv_view(request):
     """If user is not authenticated, go back to login. This will return the CSV file with the days of the shift, the next weekday, the user's schedule based on their id.
@@ -178,6 +185,7 @@ def Csv_view(request):
     if not request.user.is_staff:
         return redirect(reverse('login'))
 
+    # each shift of the day of the week is accounted for along with the selected shift day
     def get_date(shifts):
         for i in shifts:
             for keys, vals in i.items():
@@ -204,6 +212,7 @@ def Csv_view(request):
                     i['selected_shift__day'] = s_date
         return shifts
 
+    # this accounts for the next weekday
     def next_weekday(d, weekday):
         days_ahead = weekday - d.weekday()
         if days_ahead <= 0:
@@ -212,7 +221,7 @@ def Csv_view(request):
         future_day = future_day.strftime("%m/%d/%Y")
         return future_day
 
-    # shift = get_object_or_404(User_Schedule, id=pk)
+    # this will look through the user schedule's values based on their distinct id and return as a csv in this order: subject, start date, start time and end time
     shifts = User_Schedule.objects.values(
         'selected_shift__user_schedule__user__first_name',
         'selected_shift__day',
