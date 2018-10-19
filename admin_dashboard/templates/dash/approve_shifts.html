@@ -1,24 +1,45 @@
-{% extends "base/base.html" %}
+{% extends "dash/admin_dashboard.html" %}
 
 {% block content %}
-<h2> Approve/Assign Shifts </h2>
 
-<form method="post">
-  {% for shift in prefs %}
-    <ul>
-        <li>
-        {{ shift.selected_shift__user_schedule__user__first_name }}
-        {{ shift.selected_shift__user_schedule__user__last_name }} |
-        {{ shift.selected_shift__day }}:
-        {{ shift.selected_shift__start_time }} -
-        {{ shift.selected_shift__end_time }} |
-        {{ shift.priority }} |
-        <input type="checkbox" name="status" value="{{ shift.status }}">
-      </li>
-    </ul>
-  {% endfor %}
-  {{ form.as_p }}
-  {% csrf_token %}
-  <input type="submit" value="save">
-</form>
+<section class="section_header"><p>View and approve employee shift prefrences</p></section>
+
+<div class="home_back">
+    <form id="schedules" method="post"> {% csrf_token %}
+
+        <div class="pref_row">
+            <div id="pref_name">name:</div>
+                <div id="pref_shift">shift:</div>
+                    <div id="pref_needed">needed:</div>
+                        <div id="pref_assigned">assigned:</div>
+                            <div id="pref_pri">prefrence:</div>
+                            <div id="pref_approval">approval:</div>
+                          </div>
+
+      {% for shift in schedules %}
+
+        <ul>
+            <li>
+              <div class="pref_row">
+                <div class="pref_name">{{ shift.first_name }} {{ shift.first_name }} {{ shift.last_name }}</div>
+                <div class="pref_shift">{{ shift.day }}:{{ shift.start_time }} - {{ shift.end_time }}</div class="">
+                <div class="pref_needed">{{ shift.needed }}</div>
+                <div class="pref_assigned">{{ shift.assigned }}</div>
+                <div class="pref_pri">{{ shift.priority }}</div>
+                <div><input type="checkbox" name="{{ shift.id }}" value="{{ shift.status }}"></div>
+              </div>
+
+          </li>
+        </ul>
+      {% endfor %}
+    </form>
+    <Section class="submit_section">
+    <button type="submit" form="schedules" name="list" value="Submit">Save</button>
+    </Section>
+</div>
+
+<div class="button_body">
+    <a href="{% url 'admin_dash' %}">< dash</a>
+  </div><br>
 {% endblock content %}
+

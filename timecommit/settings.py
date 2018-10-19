@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_registration',
     'import_export',
     'rest_framework',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -155,4 +156,4 @@ else:
 
 LOGOUT_REDIRECT_URL = 'home'
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'schedules'

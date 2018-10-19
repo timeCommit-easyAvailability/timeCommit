@@ -4,6 +4,9 @@ from django.db import models
 
 
 class Shift(models.Model):
+    """this is the shift model. Each shift will take on this form
+    """
+    # days of the week
     DAY = [
         ('monday', 'Monday'),
         ('tuesday', 'Tuesday'),
@@ -14,6 +17,7 @@ class Shift(models.Model):
         ('sunday', 'Sunday'),
     ]
 
+    # properties and how they are displayed and what data form they take e.g. employees required field is an integer
     day = models.CharField(choices=DAY, max_length=9, default='Monday')
     start_time = models.IntegerField()
     end_time = models.IntegerField()
@@ -40,6 +44,8 @@ class Shift(models.Model):
 
 
 class Company(models.Model):
+    """this is the company model. Each company will take on this form
+    """
     company_name = models.CharField(max_length=254)
     address = models.CharField(max_length=254)
     contact_email = models.EmailField(max_length=254)
@@ -62,6 +68,8 @@ class Company(models.Model):
 
 
 class Scheduler(models.Model):
+    """this is the scheduler model. each scheduler will take on this form
+    """
     subject = models.CharField(max_length=254)
     start_date = models.DateField()
     description = models.CharField(max_length=254)
