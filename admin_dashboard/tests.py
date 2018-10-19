@@ -16,6 +16,7 @@ class TestCSVFile(TestCase):
         from .views import Csv_view
         self.assertIsNotNone(Csv_view)
 
+
 # class TestAdmin(TestCase):
 #     # Admin logs in
 #     def setUp(self):
