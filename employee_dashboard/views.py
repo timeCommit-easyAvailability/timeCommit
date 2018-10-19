@@ -26,11 +26,13 @@ def employee_dashboard_view(request):
         'friday': [],
         'saturday': [],
     }
-    
+
     for shift in all_shifts:
         net_emps = (shift.employees_required - len(shift.employees_assigned))
         if net_emps > 3:
             net_emps = 3
+        elif net_emps < 0:
+            net_emps = 0
         new_shift = {
             'start_time': shift.start_time,
             'end_time': shift.end_time,

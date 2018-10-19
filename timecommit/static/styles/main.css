@@ -279,7 +279,7 @@ footer{
 }
 
 #schedule_direcitons{
-    width: 70vw;
+    /* width: 70vw; */
     /* padding-top: 20px; */
     padding-bottom: 20px;
 
@@ -400,3 +400,54 @@ input{
 input:focus{
     background-color: white;
 }
+
+
+/* /// CAL KEY /// */
+
+#color_key{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#color_key li{
+    /* display: inline-block; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 15px;
+}
+
+
+#color_0{
+    width: 15px;
+    height: 15px;
+    background-color:#d3d3d3;
+    margin-left: 5px;
+}
+
+#color_1{
+    width: 15px;
+    height: 15px;
+    background-color:#32cd32;
+    margin-left: 5px;
+
+}
+
+#color_2{
+    width: 15px;
+    height: 15px;
+    background-color:#ffff00;
+    margin-left: 5px;
+
+}
+
+#color_3{
+    width: 15px;
+    height: 15px;
+    background-color:#dc143c;
+    margin-left: 5px;
+
+}
+
