@@ -6,6 +6,11 @@ from operator import itemgetter
 
 
 def employee_dashboard_view(request):
+    """if user is not authenticated, return permission denied error.
+    for shift, show the days of the week. and iterate through all of the
+    shifts with the start time and end time. and show the days of
+    the week on the calendar. return to the employee dashboard.
+    """
     if not request.user.is_authenticated:
         return redirect(reverse('login'))
 
@@ -21,8 +26,11 @@ def employee_dashboard_view(request):
         'friday': [],
         'saturday': [],
     }
-
+    
     for shift in all_shifts:
+        net_emps = (shift.employees_required - len(shift.employees_assigned))
+        if net_emps > 3:
+            net_emps = 3
         new_shift = {
             'start_time': shift.start_time,
             'end_time': shift.end_time,
@@ -30,6 +38,7 @@ def employee_dashboard_view(request):
             'employees_assigned': shift.employees_assigned,
             'id': shift.id,
             'day': shift.day,
+            'req': str(net_emps),
         }
         days_of_the_week[shift.day.lower()].append(new_shift)
 
@@ -70,8 +79,7 @@ def employee_dashboard_view(request):
 
     context = {
         'calendar': days_of_the_week,
-        # 'all_projects': all_shifts
-
     }
 
+    # renders employee dashboard upon request
     return render(request, 'employee/employee_dashboard.html', context=context)

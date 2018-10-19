@@ -4,6 +4,7 @@
 {% load static %}
 
 
+
 <section class="section_header"><p>Weekly shift avaliability</p></section>
 
 <div class="home_back">
@@ -30,7 +31,9 @@
         <div class="shift_day" id="sun">
 
             {% for shift in calendar.sunday %}
-            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
+            <div class="shift need{{ shift.req }}" ><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
@@ -40,7 +43,9 @@
         <div class="shift_day" id="mon">
 
             {% for shift in calendar.monday %}
-            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
+            <div class="shift need{{ shift.req }}"><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
@@ -50,7 +55,9 @@
         <div class="shift_day" id="tue">
 
             {% for shift in calendar.tuesday %}
-            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
+            <div class="shift need{{ shift.req }}"><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
@@ -60,7 +67,9 @@
         <div class="shift_day" id="wed">
 
             {% for shift in calendar.wednesday %}
-            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
+            <div class="shift need{{ shift.req }}"><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
@@ -70,7 +79,9 @@
         <div class="shift_day" id="thu">
 
             {% for shift in calendar.thursday %}
-            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
+            <div class="shift need{{ shift.req }}"><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
@@ -80,7 +91,9 @@
         <div class="shift_day" id="fri">
 
           {% for shift in calendar.friday %}
-            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
+            <div class="shift need{{ shift.req }}"><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
@@ -90,7 +103,9 @@
         <div class="shift_day" id="sat">
 
           {% for shift in calendar.saturday %}
-            <div class="shift"><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
+            <div class="shift need{{ shift.req }}"><span>{{shift.start_time}} - {{shift.end_time}}</span>
+
               <input name="{{shift.id}}">
             </div>
             {% endfor %}
@@ -111,4 +126,7 @@
       <a href="{% url 'admin_dash' %}">< dash</a>
     </div><br>
     {% endif %}
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="{% static 'scripts/calendar.js' %}"></script>
 {% endblock content %}
