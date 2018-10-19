@@ -18,6 +18,7 @@ from .views import home_view, about_view
 from .views import home_view, about_view, register_view
 from django.urls import path, include
 
+
 urlpatterns = [
     path('', home_view, name='home'),
     path('admin/', admin.site.urls),

@@ -11,19 +11,26 @@ Welcome to time commit!<br><br><br>
 
 {% if user.is_authenticated %}
 
-<h2>To select and submit shift prefrences:</h2>
+<h2>To select and submit your own shift prefrences:</h2>
 <div class="button_body">
     <a href="{% url "schedules" %}">submit</a>
-</div><br>
+</div><br><br>
 
 
           {% if user.is_staff %}
-          <h2>Or go to the admin dashboard:</h2>
+          <h2>Go to the admin dashboard:</h2>
           <div class="button_body">
-            <a href="{% url 'admin_dash' %}">Over 9000</a>
-          </div><br>
+            <a href="{% url 'admin_dash' %}">admin dash</a>
+          </div><br><br>
           {% endif %}
           {% endif %}
+
+  {% if user.is_superuser %}
+  <h2>You are logged in as SuperUser</h2>
+  <h2>You can manage the site directly via Django superuser console:</h2>
+  <h2>http://localhost:8000/admin/</h2>
+  <h2>this includes admin and manual data management</h2>
+  {% endif %}
 
 </div>
 

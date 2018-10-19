@@ -373,3 +373,16 @@ footer{
     /* width: 15%; */
     text-align: right;
 }
+
+/* /// FORMS /// */
+
+input{
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #ddd;
+    padding:5px;
+}
+
+input:focus{
+    background-color: white;
+}
