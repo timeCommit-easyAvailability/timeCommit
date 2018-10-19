@@ -17,6 +17,7 @@ from django.contrib import admin
 from .views import home_view, about_view
 from django.urls import path, include
 
+# This is routing to other pages
 urlpatterns = [
     path('', home_view, name='home'),
     path('admin/', admin.site.urls),
