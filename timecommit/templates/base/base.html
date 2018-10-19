@@ -34,12 +34,13 @@
 
         {% if user.is_authenticated %}
 
-
+          {% comment %} {% if user.is_authenticated %}
           {% if user.is_staff %}
           <div class="button_wrap">
             <a href="{% url 'admin_dash' %}">Admin dash</a>
           </div>
           {% endif %}
+          {% endif %} {% endcomment %}
 
 
           {% else %}

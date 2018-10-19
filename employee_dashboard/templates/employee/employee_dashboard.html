@@ -102,4 +102,9 @@
   </section>
 
   </div>
+  {% if user.is_staff %}
+  <div class="button_body">
+      <a href="{% url 'admin_dash' %}">< dash</a>
+    </div><br>
+    {% endif %}
 {% endblock content %}

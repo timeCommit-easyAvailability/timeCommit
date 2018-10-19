@@ -26,7 +26,7 @@
                 <div class="pref_needed">{{ shift.needed }}</div>
                 <div class="pref_assigned">{{ shift.assigned }}</div>
                 <div class="pref_pri">{{ shift.priority }}</div>
-                <input type="checkbox" name="{{ shift.id }}" value="{{ shift.status }}">
+                <div><input type="checkbox" name="{{ shift.id }}" value="{{ shift.status }}"></div>
               </div>
 
           </li>
@@ -37,5 +37,9 @@
     <button type="submit" form="schedules" name="list" value="Submit">Save</button>
     </Section>
 </div>
+
+<div class="button_body">
+    <a href="{% url 'admin_dash' %}">< dash</a>
+  </div><br>
 {% endblock content %}
 

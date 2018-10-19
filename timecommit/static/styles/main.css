@@ -326,7 +326,11 @@ footer{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #99B898;
+    background-color: #648391;
+    padding:2px;
+    padding-left:15px;
+    padding-right:15px;
+    border-radius: 3px;
     color: #2a363b;
     margin-bottom: 2px;
 }

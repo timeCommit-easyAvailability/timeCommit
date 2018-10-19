@@ -6,18 +6,27 @@
 
 <div class="home_back">
 
-Welcome to time commit! If you're here to declare your avaliable hours and shift prefrences:<br><br>
-1] click 'log in'<br><br>
-2] create yourself an account to keep track of your schedule request<br><br>
-3] submit and you're done!<br><br>
+Welcome to time commit!<br><br><br>
 
 
 {% if user.is_authenticated %}
 
+<h2>To select and submit shift prefrences:</h2>
 <div class="button_body">
-    <a href="{% url "schedules" %}">select shift prefrence</a>
+    <a href="{% url "schedules" %}">submit</a>
+</div><br>
+
+
+          {% if user.is_staff %}
+          <h2>Or go to the admin dashboard:</h2>
+          <div class="button_body">
+            <a href="{% url 'admin_dash' %}">Over 9000</a>
+          </div><br>
+          {% endif %}
+          {% endif %}
+
 </div>
 
-{% endif %}
-</div>
+
+
 {% endblock  %}
