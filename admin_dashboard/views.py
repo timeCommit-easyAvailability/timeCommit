@@ -88,7 +88,6 @@ class ApproveUserScheduleView(LoginRequiredMixin, ListView):
         return context
 
 
-
 def Csv_view(request):
     if not request.user.is_authenticated:
         return redirect(reverse('login'))
