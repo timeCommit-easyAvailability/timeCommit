@@ -27,14 +27,11 @@ Admins maintain the system by approving users hours, adjusting the days/timeslot
 ##### Git-flow
 ![gitflow](https://github.com/timeCommit-easyAvailability/timeCommit/blob/master/assets/gitflow.jpg) <br>
 
-
 #### License:
 - MIT License
 
-
 #### Change Log:
 10-04-2018 Created README
-
 
 ```python
 Chris Turner, J Christie, Jason Burns, Stephen Harper
