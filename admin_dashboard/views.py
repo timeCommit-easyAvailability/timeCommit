@@ -65,7 +65,7 @@ class CreateCompanyView(LoginRequiredMixin, CreateView):
     template_name = 'dash/create_company.html'
     model = Company
     form_class = CompanyForm
-    success_url = reverse_lazy('dash/admin_dashboard.html')
+    success_url = reverse_lazy('admin_dash')
     login_url = reverse_lazy('login')
 
     def form_valid(self, form):

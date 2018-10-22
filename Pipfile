@@ -11,6 +11,7 @@ django-import-export = "*"
 django-rest-framework = "*"
 django-queryset-csv = "*"
 django-extensions = "*"
+django-nose = "*"
 pydotplus = "*"
 
 [dev-packages]
