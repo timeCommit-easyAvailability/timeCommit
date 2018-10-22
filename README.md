@@ -16,12 +16,9 @@ There are two roles available: Admin and Employee/Volunteer.
 ![wireframe2](https://github.com/timeCommit-easyAvailability/timeCommit/blob/master/assets/wireframe_6.jpg) <br>
 
 Database Tables:
-![wireframe2](https://github.com/timeCommit-easyAvailability/timeCommit/blob/master/assets/myapp_models.png) <br>
+![db](https://github.com/timeCommit-easyAvailability/timeCommit/blob/master/assets/myapp_models.png) <br>
 
 Admins maintain the system by approving users hours, adjusting the days/timeslots based on need, and approve an employee's choices. Once approved, the system emails the employee a notification that their choices have been approved. Users and managers will be able to sign in and see the schedule at any time.
-
-Database Tables:
-![db](https://github.com/timeCommit-easyAvailability/timeCommit/blob/master/assets/myapp_models.png) <br>
 
 #### License:
 - MIT License

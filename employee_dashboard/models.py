@@ -30,7 +30,7 @@ class User_Schedule(models.Model):
     class Meta:
         unique_together = ('user', 'selected_shift',)
 
-    def __repr__(self):
+    def __repr__(self):  # pragma: no cover
         return '<Shift: {} | Priority: {} | Status: {} | User: {} >'.format(
             self.selected_shift,
             self.priority,
@@ -38,5 +38,9 @@ class User_Schedule(models.Model):
             self.user,
             )
 
-    def __str__(self):
-        return '{} | {} | {}'.format(self.selected_shift, self.user, self.status)
+    def __str__(self):  # pragma: no cover
+        return '{} | {} | {}'.format(
+            self.selected_shift,
+            self.user,
+            self.status
+        )
