@@ -10,6 +10,8 @@ django-registration = "*"
 django-import-export = "*"
 django-rest-framework = "*"
 django-queryset-csv = "*"
+tablib = "*"
+django-nose = "*"
 
 [dev-packages]
 
